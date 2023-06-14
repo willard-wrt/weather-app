@@ -18,12 +18,26 @@ header {
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
-h1 {
+.top-title-container {
+  display: flex;
+  align-items: center;
+}
+
+.top-title {
   font-family: "Nunito", "sans-serif";
-  font-size: 48px;
+  font-size: 45px;
+  margin-left: 5px;
   color: whitesmoke;
+}
+
+#weather-logo {
+  height: 60px;
+  width: 60px;
+  background-image: url(assets/weather-logo.png);
+  background-size: 60px;
+  background-position: center;
 }
