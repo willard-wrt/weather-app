@@ -10,6 +10,11 @@ svg {
   vertical-align: -0.125em;
 }
 
+#top-right {
+  font-family: "Nunito", "sans-serif";
+  font-weight: bold;
+  color: #6b6b6b;
+}
 
 .search-input {
   width: 270px;
