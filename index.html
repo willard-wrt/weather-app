@@ -13,24 +13,27 @@
     <title>Weather App</title>
   </head>
   <body>
-    <header class="header">
-      <div id="top-left">
-        <div class="top-title-container">
-          <div id="weather-logo"></div>
-          <h1 class="top-title">WeatherFX</h1>
+    <div class="wrapper">
+      <header class="header">
+        <div id="top-left">
+          <div class="top-title-container">
+            <div id="weather-logo"></div>
+            <h1 class="top-title">WeatherFX</h1>
+          </div>
         </div>
+        <div id="top-center">
+          <form class="search" action="#" method ="get">
+            <input class="search-input" type name id ="search" placeholder ="Search location (City)" autocomplete="off"/><button class="search-submit" type="submit">
+              <svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"> <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" fill="white"></path> </svg>
+            </button>
+          </form>
+          <div class="settings"><button class="setting-celsius active">°C</button><button class="setting-fahrenheit">°F</button></div>
       </div>
-      <div id="top-center">
-        <form class="search" action="#" method ="get">
-          <input class="search-input" type name id ="search" placeholder ="Search location (City)" autocomplete="off"/><button class="search-submit" type="submit">
-            <svg style="color: white" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"> <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" fill="white"></path> </svg>
-          </button>
-        </form> 
+      <div id="top-right">
+        <label for="langs">Language: </label><select name="langs" id="langs"><option value="English">English</option>
+          <option value="日本語">日本語</option><option value="ไทย">ไทย</option></select>
+      </div>
+        </header>
     </div>
-    <div id="top-right">
-      <form class = "langs-selection" action="#"><label for="langs">Language: </label><select name="langs" id="langs"><option value="English">English</option>
-        <option value="日本語">日本語</option><option value="ไทย">ไทย</option></select></form>
-    </div>
-  </header>
   </body>
 </html>
