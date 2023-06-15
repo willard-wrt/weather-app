@@ -6,14 +6,61 @@
   box-sizing: border-box;
 }
 
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: 'header header header' '. main .';
+}
+
+.header {
+  grid-area: header;
+}
+
 svg {
   vertical-align: -0.125em;
 }
 
+#top-left {
+  width: 320px;
+  grid-area: top-left;
+}
+
+#top-center {
+  display: flex;
+  justify-self: center;
+  grid-area: top-center;
+}
+
 #top-right {
+  grid-area: top-right;
   font-family: "Nunito", "sans-serif";
   font-weight: bold;
   color: #6b6b6b;
+  justify-self: end;
+}
+
+
+.settings {
+  display: flex;
+  margin-left: 10px;
+}
+
+.settings button {
+  cursor: pointer;
+  font-size: 16px;
+  padding: 5px;
+  height: 35px;
+  width: 35px;
+  margin: 0px 5px 0px 0px;
+  background-color: #125683;
+  color: whitesmoke;
+  transition: all 0.3s;
+  border: 2px solid rgba(255, 255, 255, 0.3) ;
+}
+
+.settings button:hover, button.active {
+  border: 2px solid whitesmoke;
 }
 
 .search-input {
@@ -40,7 +87,7 @@ svg {
 }
 
 form {
-  display: block;
+  display: flex;
   margin: 0px;
   padding: 0px;
 
@@ -57,12 +104,13 @@ header {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 400px 1fr;
+  grid-template-areas: 'top-left top-center top-right';
   align-items: center;
 }
 
-.top-title-container {
+.top-title-container, #top-center {
   display: flex;
   align-items: center;
 }
