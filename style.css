@@ -6,6 +6,41 @@
   box-sizing: border-box;
 }
 
+svg {
+  vertical-align: -0.125em;
+}
+
+
+.search-input {
+  width: 270px;
+  padding: 4px 0px 4px 12px;
+  border: none;
+}
+
+.search > * {
+  font-family: "Nunito", "sans-serif";
+  outline: 1px solid rgba(255, 255, 255, 0.3);;
+  color: whitesmoke;
+  height: 40px;
+  font-size: 18px;
+  font-weight: bolder;
+  background-color: #082f49;
+}
+
+.search-submit {
+  cursor: pointer;
+  width: 35px;
+  border: none;
+
+}
+
+form {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+
+}
+
 body {
   background-color: #178bad;
 }
