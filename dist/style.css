@@ -48,8 +48,20 @@ main {
 
 }
 
-.main-display {
+.main-heading h2 {
 
+font-size: 35px;
+color: whitesmoke;
+}
+
+.main-heading p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.main-heading {
+  text-align: center;
+  font-family: "Nunito", "sans-serif";  
 }
 
 
