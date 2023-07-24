@@ -74,6 +74,7 @@ font-size: 35px;
   background: rgba(255, 133, 77, 0.7);
   padding: 25px;
   border-radius: 10px;
+  width: 240px;
   font-weight: bold;
   display: flex;
   flex-direction: column;
@@ -87,12 +88,11 @@ font-size: 35px;
 .weather-desc {
   color: rgba(255, 255, 255, 0.5);
   font-size: 18px;
-
 }
-
 .desc-weather {
   font-size: 24px;
-  color: whitesmoke
+  color: whitesmoke;
+  margin-bottom: 10px;
 }
 
 .settings {
