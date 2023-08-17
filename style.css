@@ -8,9 +8,10 @@
 
 .wrapper {
   display: grid;
+  min-height: 100%;
   grid-template-columns: 1fr 750px 1fr;
-  grid-template-rows: auto 1fr;
-  grid-template-areas: 'header header header' '. main .';
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 'header header header' '. main .' ;
 }
 
 .header {
@@ -188,3 +189,34 @@ header {
   background-size: 60px;
   background-position: center;
 }
+
+footer {
+  justify-content: center;
+  display: flex;
+  align-items: center;  
+  margin-bottom: 0px; 
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(29, 37, 59, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+  padding: 10px;
+  }
+
+  footer p {
+    color: rgba(245, 245, 245, 0.8); 
+    font-size: 16px;  
+    margin-right: 8px;
+    
+    }
+    
+    .fa.fa-github {
+    color: whitesmoke; 
+    transition: transform 0.3s ease-in-out;
+    }
+    
+    .fa.fa-github:hover {
+    transform: rotate(360deg) scale(1.2);
+    color: #f43f5e;
+    }
