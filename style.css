@@ -83,13 +83,18 @@ font-size: 35px;
 }
 
 .display-data {
-  font-size: 62px;
+  font-size: 56px;
 }
 
 .weather-desc {
   color: rgba(255, 255, 255, 0.5);
   font-size: 18px;
 }
+
+.desc-tidbit {
+  margin-bottom: 5px;
+}
+
 .desc-weather {
   font-size: 24px;
   color: whitesmoke;
