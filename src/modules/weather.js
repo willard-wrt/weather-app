@@ -8,7 +8,7 @@ const weather = (() => {
         feelslike_c: feelsLikeCel,
         feelslike_f: feelsLikeFah,
         humidity,
-        wind_kmh: windSpeed,
+        wind_kph: windSpeed,
         condition: { text: desc },
       },
     } = data;
