@@ -25,6 +25,7 @@ async function searchData() {
   display.setSearchResult(weatherData);
 }
 
+/* Temporarily disabled until further tested...
 function getIp(url) {
   return fetch(url).then((res) => res.json());
 }
@@ -37,4 +38,4 @@ getIp(
     const weatherData = await weather.getData(data.city);
     display.setSearchResult(weatherData);
   })();
-});
+}); */
