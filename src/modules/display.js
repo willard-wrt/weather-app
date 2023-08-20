@@ -9,6 +9,7 @@ const feelingText = document.querySelector('.desc-feeling');
 const humidityText = document.querySelector('.desc-humidity');
 const windText = document.querySelector('.desc-wind');
 const celsiusTab = document.querySelector('.setting-celsius');
+const mainWeather = document.querySelectorAll('.skeleton');
 
 const display = (() => {
   function setSearchResult(weatherData) {
@@ -26,6 +27,9 @@ const display = (() => {
       unitText.textContent = '°F';
       feelingText.textContent = `Feel like: ${weatherData.feelsLikeFah} °F`;
     }
+    mainWeather.forEach((element) => {
+      element.classList.remove('skeleton-text', 'skeleton');
+    });
     weatherText.textContent = weatherData.desc;
     humidityText.textContent = `Humidity: ${weatherData.humidity} %`;
     windText.textContent = `Wind: ${weatherData.windSpeed} km/h`;
