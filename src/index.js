@@ -8,6 +8,7 @@ const searchCity = document.querySelector('#search');
 const searchBtn = document.querySelector('.search-submit');
 const celsiusTab = document.querySelector('.setting-celsius');
 const fahrenheitTab = document.querySelector('.setting-fahrenheit');
+const mainWeather = document.querySelectorAll('.skeleton');
 
 searchBtn.addEventListener('click', searchData);
 
@@ -22,6 +23,9 @@ fahrenheitTab.addEventListener('click', () => {
 
 async function searchData() {
   const weatherData = await weather.getData(searchCity.value);
+  mainWeather.forEach((element) => {
+    element.classList.remove('skeleton-text', 'skeleton');
+  });
   display.setSearchResult(weatherData);
 }
 
