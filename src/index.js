@@ -8,6 +8,7 @@ const searchCity = document.querySelector('#search');
 const searchBtn = document.querySelector('.search-submit');
 const celsiusTab = document.querySelector('.setting-celsius');
 const fahrenheitTab = document.querySelector('.setting-fahrenheit');
+const titleLogo = document.querySelector('.top-title-container');
 
 searchBtn.addEventListener('click', searchData);
 
@@ -18,6 +19,9 @@ celsiusTab.addEventListener('click', () => {
 fahrenheitTab.addEventListener('click', () => {
   fahrenheitTab.classList.add('active');
   celsiusTab.classList.remove('active');
+});
+titleLogo.addEventListener('click', () => {
+  window.location.reload();
 });
 
 async function searchData() {

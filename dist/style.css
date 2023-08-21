@@ -190,6 +190,10 @@ header {
   align-items: center;
 }
 
+.top-title-container {
+  cursor: pointer;
+}
+
 .top-title {
   font-family: "Nunito", "sans-serif";
   font-size: 45px;
