@@ -9,6 +9,7 @@ const searchBtn = document.querySelector('.search-submit');
 const celsiusTab = document.querySelector('.setting-celsius');
 const fahrenheitTab = document.querySelector('.setting-fahrenheit');
 const titleLogo = document.querySelector('.top-title-container');
+const errorInfo = document.querySelector('#error-info');
 // const mainHeading = document.querySelector('.main-heading');
 
 searchBtn.addEventListener('click', searchData);
@@ -27,8 +28,14 @@ titleLogo.addEventListener('click', () => {
 
 async function searchData() {
   // mainHeading.style.opacity = '0'; // Toggle this for smooth transition with slow network
-  const weatherData = await weather.getData(searchCity.value);
-  display.setSearchResult(weatherData);
+  if (searchCity.value === '') {
+    errorInfo.style.opacity = '1';
+    errorInfo.textContent =
+      'Error: City name is required; search field must be filled.';
+  } else {
+    const weatherData = await weather.getData(searchCity.value);
+    display.setSearchResult(weatherData);
+  }
 }
 
 /* Temporarily disabled until further tested...
