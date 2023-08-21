@@ -53,6 +53,7 @@ main {
   justify-items: center;
   font-family: "Nunito", "sans-serif";
   color: whitesmoke;
+  animation: fadeIn 2s;
 
 }
 
@@ -67,8 +68,15 @@ font-size: 35px;
 
 .main-heading {
   grid-area: title;
+  transition: opacity 2s;
   text-align: center;  
 }
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
 
 .main-weather {
   grid-area: weather;

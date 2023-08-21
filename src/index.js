@@ -9,6 +9,7 @@ const searchBtn = document.querySelector('.search-submit');
 const celsiusTab = document.querySelector('.setting-celsius');
 const fahrenheitTab = document.querySelector('.setting-fahrenheit');
 const titleLogo = document.querySelector('.top-title-container');
+// const mainHeading = document.querySelector('.main-heading');
 
 searchBtn.addEventListener('click', searchData);
 
@@ -25,6 +26,7 @@ titleLogo.addEventListener('click', () => {
 });
 
 async function searchData() {
+  // mainHeading.style.opacity = '0'; // Toggle this for smooth transition with slow network
   const weatherData = await weather.getData(searchCity.value);
   display.setSearchResult(weatherData);
 }
