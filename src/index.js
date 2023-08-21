@@ -5,12 +5,17 @@ import display from './modules/display';
 console.log('webpack is working');
 
 const searchCity = document.querySelector('#search');
+const searchForm = document.querySelector('#search-form');
 const searchBtn = document.querySelector('.search-submit');
 const celsiusTab = document.querySelector('.setting-celsius');
 const fahrenheitTab = document.querySelector('.setting-fahrenheit');
 const titleLogo = document.querySelector('.top-title-container');
 const errorInfo = document.querySelector('#error-info');
 // const mainHeading = document.querySelector('.main-heading');
+
+searchForm.addEventListener('click', (e) => {
+  e.preventDefault();
+});
 
 searchBtn.addEventListener('click', searchData);
 
