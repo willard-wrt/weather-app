@@ -48,10 +48,10 @@ function getIp(url) {
 }
 
 setTimeout(() => {
-  getIp('http://ip-api.com/json/').then((data) => {
-    console.log(data.city);
+  getIp('https://api.ipapi.is').then((data) => {
+    console.log(data.location.city);
     (async () => {
-      const weatherData = await weather.getData(data.city);
+      const weatherData = await weather.getData(data.location.city);
       display.setSearchResult(weatherData);
     })();
   });
