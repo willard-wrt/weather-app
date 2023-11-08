@@ -43,17 +43,16 @@ async function searchData() {
   }
 }
 
-/* Temporarily disabled until further tested...
 function getIp(url) {
   return fetch(url).then((res) => res.json());
 }
 
-getIp(
-  'http://api.ipstack.com/check?access_key=d1fdcb2a51612d357777c48a72fca630'
-).then((data) => {
-  console.log(data.city);
-  (async () => {
-    const weatherData = await weather.getData(data.city);
-    display.setSearchResult(weatherData);
-  })();
-}); */
+setTimeout(() => {
+  getIp('http://ip-api.com/json/').then((data) => {
+    console.log(data.city);
+    (async () => {
+      const weatherData = await weather.getData(data.city);
+      display.setSearchResult(weatherData);
+    })();
+  });
+}, 5000);
