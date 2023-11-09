@@ -11,7 +11,22 @@ const celsiusTab = document.querySelector('.setting-celsius');
 const fahrenheitTab = document.querySelector('.setting-fahrenheit');
 const titleLogo = document.querySelector('.top-title-container');
 const errorInfo = document.querySelector('#error-info');
+const langOpts = document.querySelector('#langs');
+const langLabel = document.querySelector('#lang-label');
 // const mainHeading = document.querySelector('.main-heading');
+
+langOpts.addEventListener('change', (e) => {
+  if (e.target.value == '日本語') {
+    langLabel.textContent = '地域 (API): ';
+    searchCity.placeholder = '県庁所在地名を入力してくだい';
+  }
+  if (e.target.value == 'English') {
+    langLabel.textContent = 'Region (API): ';
+    searchCity.placeholder = 'Search location (City)';
+  }
+});
+
+console.log(langOpts);
 
 searchForm.addEventListener('click', (e) => {
   e.preventDefault();
@@ -49,9 +64,9 @@ function getIp(url) {
 
 setTimeout(() => {
   getIp('https://api.ipapi.is').then((data) => {
-    console.log(data.location.city);
+    console.log(data.location.state);
     (async () => {
-      const weatherData = await weather.getData(data.location.city);
+      const weatherData = await weather.getData(data.location.state);
       display.setSearchResult(weatherData);
     })();
   });
