@@ -82,6 +82,9 @@ const autoSearch = setTimeout(() => {
     (async () => {
       const weatherData = await weather.getData(data.location.city);
       display.setSearchResult(weatherData);
+      errorInfo.style.opacity = '1';
+      errorInfo.textContent =
+        '* This location is determined by your IP address.';
     })();
   });
 }, 5000);
