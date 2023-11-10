@@ -48,7 +48,7 @@ titleLogo.addEventListener('click', () => {
 
 async function searchData() {
   // mainHeading.style.opacity = '0'; // Toggle this for smooth transition with slow network
-
+  clearTimeout(autoSearch);
   if (langOpts.value === 'English') {
     if (searchCity.value === '') {
       errorInfo.style.opacity = '1';
@@ -75,7 +75,7 @@ function getIp(url) {
   return fetch(url).then((res) => res.json());
 }
 
-setTimeout(() => {
+const autoSearch = setTimeout(() => {
   getIp('https://api.ipapi.is').then((data) => {
     console.log(data.location.state);
     (async () => {
