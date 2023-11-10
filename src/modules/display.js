@@ -60,8 +60,14 @@ const displayJp = (() => {
       unitText.textContent = '°C';
       feelingText.textContent = `気温：${weatherData.minC}度-${weatherData.maxC}度`;
     } else {
-      tempText.textContent =
-        (parseInt(weatherData.minF) + parseInt(weatherData.maxF)) / 2;
+      if (weatherData.minF && weatherData.maxF !== null) {
+        tempText.textContent =
+          (parseInt(weatherData.minF) + parseInt(weatherData.maxF)) / 2;
+      } else {
+        weatherData.minC
+          ? (tempText.textContent = weatherData.minF)
+          : (tempText.textContent = weatherData.maxF);
+      }
       unitText.textContent = '°F';
       feelingText.textContent = `気温：${weatherData.minF}°F-${weatherData.maxF}°F`;
     }
