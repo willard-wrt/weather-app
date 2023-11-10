@@ -1,6 +1,8 @@
 // import './style.css';
 import weather from './modules/weather';
+import weatherJp from './modules/weatherjp';
 import display from './modules/display';
+import japanCities from './modules/cities';
 
 console.log('webpack is working');
 
@@ -16,17 +18,15 @@ const langLabel = document.querySelector('#lang-label');
 // const mainHeading = document.querySelector('.main-heading');
 
 langOpts.addEventListener('change', (e) => {
-  if (e.target.value == '日本語') {
+  if (e.target.value == 'Jp') {
     langLabel.textContent = '地域 (API): ';
-    searchCity.placeholder = '県庁所在地名を入力してくだい';
+    searchCity.placeholder = '都市名を入力してくだい';
   }
   if (e.target.value == 'English') {
     langLabel.textContent = 'Region (API): ';
     searchCity.placeholder = 'Search location (City)';
   }
 });
-
-console.log(langOpts);
 
 searchForm.addEventListener('click', (e) => {
   e.preventDefault();
@@ -48,13 +48,26 @@ titleLogo.addEventListener('click', () => {
 
 async function searchData() {
   // mainHeading.style.opacity = '0'; // Toggle this for smooth transition with slow network
-  if (searchCity.value === '') {
-    errorInfo.style.opacity = '1';
-    errorInfo.textContent =
-      'Error: City name is required; search field must be filled.';
-  } else {
-    const weatherData = await weather.getData(searchCity.value);
-    display.setSearchResult(weatherData);
+
+  if (langOpts.value === 'English') {
+    if (searchCity.value === '') {
+      errorInfo.style.opacity = '1';
+      errorInfo.textContent =
+        'Error: City name is required; search field must be filled.';
+    } else {
+      const weatherData = await weather.getData(searchCity.value);
+      display.setSearchResult(weatherData);
+    }
+  } else if (langOpts.value === 'Jp') {
+    if (searchCity.value === '') {
+      errorInfo.style.opacity = '1';
+      errorInfo.textContent = 'ご注意： 検索バーに都市名が必要です（例・東京)';
+    } else {
+      const weatherDataJp = await weatherJp.getData(
+        japanCities[searchCity.value]
+      );
+      console.log(weatherDataJp);
+    }
   }
 }
 
@@ -66,8 +79,10 @@ setTimeout(() => {
   getIp('https://api.ipapi.is').then((data) => {
     console.log(data.location.state);
     (async () => {
-      const weatherData = await weather.getData(data.location.state);
+      const weatherData = await weather.getData(data.location.city);
       display.setSearchResult(weatherData);
     })();
   });
 }, 5000);
+
+console.log(langOpts.value);
