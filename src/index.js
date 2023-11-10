@@ -1,7 +1,7 @@
 // import './style.css';
 import weather from './modules/weather';
 import weatherJp from './modules/weatherjp';
-import display from './modules/display';
+import { display, displayJp } from './modules/display';
 import japanCities from './modules/cities';
 
 console.log('webpack is working');
@@ -66,6 +66,7 @@ async function searchData() {
       const weatherDataJp = await weatherJp.getData(
         japanCities[searchCity.value]
       );
+      displayJp.setSearchResult(weatherDataJp);
       console.log(weatherDataJp);
     }
   }

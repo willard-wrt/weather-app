@@ -3,14 +3,30 @@ const weatherJp = (() => {
     const {
       publicTimeFormatted,
       forecasts,
-      location: { city },
+      location: { city, area },
     } = data;
-    const { date, telop } = forecasts[0];
+    const {
+      date,
+      telop,
+      dateLabel,
+      detail: { wind, wave },
+      temperature: { min, max },
+    } = forecasts[0];
+    const { celsius: minC, fahrenheit: minF } = min;
+    const { celsius: maxC, fahrenheit: maxF } = max;
     return {
       publicTimeFormatted,
       city,
+      area,
       date,
       telop,
+      dateLabel,
+      wind,
+      wave,
+      minC,
+      minF,
+      maxC,
+      maxF,
     };
   }
 
