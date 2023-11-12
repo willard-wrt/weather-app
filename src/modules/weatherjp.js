@@ -11,7 +11,7 @@ const weatherJp = (() => {
       dateLabel,
       detail: { wind, wave },
       temperature: { min, max },
-    } = forecasts[0];
+    } = forecasts[1];
     const { celsius: minC, fahrenheit: minF } = min;
     const { celsius: maxC, fahrenheit: maxF } = max;
     return {
