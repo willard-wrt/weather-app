@@ -21,7 +21,7 @@ langOpts.addEventListener('change', async (e) => {
   if (e.target.value == 'Jp') {
     clearTimeout(autoSearch);
     langLabel.textContent = '地域 (API): ';
-    searchCity.placeholder = '都市名を入力してくだい';
+    searchCity.placeholder = '都市名を入力してください';
     const weatherDataJp = await weatherJp.getData(japanCities['東京']);
     displayJp.setSearchResult(weatherDataJp);
   }
