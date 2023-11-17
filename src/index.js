@@ -82,13 +82,20 @@ function getIp(url) {
 
 const autoSearch = setTimeout(() => {
   getIp('https://api.ipapi.is').then((data) => {
-    console.log(data.location.state);
+    console.log(data.location);
     (async () => {
-      const weatherData = await weather.getData(data.location.city);
-      display.setSearchResult(weatherData);
-      errorInfo.style.opacity = '1';
-      errorInfo.textContent =
-        '* This location is determined by your IP address.';
+      let weatherData = null;
+      if (data.location.country.toString().toLowerCase() === 'thailand') {
+        weatherData = await weather.getData(data.location.country);
+      } else {
+        weatherData = await weather.getData(data.location.city);
+      }
+      if (weatherData) {
+        display.setSearchResult(weatherData);
+        errorInfo.style.opacity = '1';
+        errorInfo.textContent =
+          '* This location is determined by your IP address.';
+      }
     })();
   });
 }, 5000);
